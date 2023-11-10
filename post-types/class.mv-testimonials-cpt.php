@@ -6,6 +6,8 @@ if (!class_exists('MV_Testimonials_Post_Type')) {
         public function __construct()
         {
             add_action('init', [$this, 'create_post_type']);
+
+            add_action('add_meta_boxes', [$this, 'add_meta_boxes']);
         }
 
         public function create_post_type()
@@ -35,6 +37,23 @@ if (!class_exists('MV_Testimonials_Post_Type')) {
                     'menu_icon' => 'dashicons-testimonial',
                 ]
             );
+        }
+
+        public function add_meta_boxes()
+        {
+            add_meta_box(
+                'mv_testimonials_meta_box',
+                esc_html__('Testimonials Options', 'mv-testimonials'),
+                [$this, 'add_inner_meta_boxes'],
+                'mv-testimonials',
+                'normal',
+                'high'
+            );
+        }
+
+        public function add_inner_meta_boxes($post)
+        {
+            require_once MV_TESTIMONIALS_PATH.'views/mv-testimonials_metabox.php';
         }
     }
 }
