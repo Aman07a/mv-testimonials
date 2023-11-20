@@ -33,10 +33,16 @@ if ($testimonials->have_posts()) :
             </div>
             <div class="meta">
                 <?php if ($occupation) : ?>
-                    <span class="occupation"><?php echo esc_html($occupation_meta); ?></span>
+                    <span class="occupation">
+                        <?php echo esc_html($occupation_meta); ?>
+                    </span>
                 <?php endif; ?>
                 <?php if ($company) : ?>
-                    <span class="company"><a href="<?php echo esc_attr($url_meta) ?>"><?php echo esc_html($company_meta); ?></a></span>
+                    <span class="company">
+                        <a href="<?php echo esc_attr($url_meta) ?>">
+                            <?php echo esc_html($company_meta); ?>
+                        </a>
+                    </span>
                 <?php endif; ?>
             </div>
         </div>
@@ -45,3 +51,6 @@ if ($testimonials->have_posts()) :
     wp_reset_postdata();
 endif;
 ?>
+<a href="<?php echo get_post_type_archive_link('mv-testimonials'); ?>">
+    <?php echo esc_html_e('Show More Testimonials', 'mv-testimonials'); ?>
+</a>
