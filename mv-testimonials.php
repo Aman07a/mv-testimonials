@@ -102,7 +102,6 @@ if (!class_exists('MV_Testimonials')) {
         public static function activate()
         {
             update_option('rewrite_rules', '');
-            flush_rewrite_rules();
         }
 
         /**
@@ -120,6 +119,7 @@ if (!class_exists('MV_Testimonials')) {
         public static function uninstall()
         {
             delete_option('widget_mv-testimonials');
+
             $posts = get_posts(
                 [
                     'post_type' => 'mv-testimonials',
@@ -127,6 +127,7 @@ if (!class_exists('MV_Testimonials')) {
                     'post_status' => 'any',
                 ]
             );
+
             foreach ($posts as $post) {
                 wp_delete_post($post->ID, true);
             }

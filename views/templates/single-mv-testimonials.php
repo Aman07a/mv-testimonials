@@ -32,7 +32,7 @@
                         <?php echo esc_html($occupation_meta); ?>
                     </span>
                     <span class="company">
-                        <a href="<?php echo esc_attr($url_meta); ?>">
+                        <a href="<?php echo esc_attr($url_meta) ?>">
                             <?php echo esc_html($company_meta); ?>
                         </a>
                     </span>
