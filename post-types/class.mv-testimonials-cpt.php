@@ -54,7 +54,7 @@ if (!class_exists('MV_Testimonials_Post_Type')) {
 
         public function add_inner_meta_boxes($post)
         {
-            require_once MV_TESTIMONIALS_PATH.'views/mv-testimonials_metabox.php';
+            require_once MV_TESTIMONIALS_PATH . 'views/mv-testimonials_metabox.php';
         }
 
         public function save_post($post_id)

@@ -41,10 +41,10 @@ if (!class_exists('MV_Testimonials')) {
             // Define constants used througout the plugin
             $this->define_constants();
 
-            require_once MV_TESTIMONIALS_PATH.'post-types/class.mv-testimonials-cpt.php';
+            require_once MV_TESTIMONIALS_PATH . 'post-types/class.mv-testimonials-cpt.php';
             $MVTestimonialsPostType = new MV_Testimonials_Post_Type();
 
-            require_once MV_TESTIMONIALS_PATH.'widgets/class.mv-testimonials-widget.php';
+            require_once MV_TESTIMONIALS_PATH . 'widgets/class.mv-testimonials-widget.php';
             $MVTestimonialsWidget = new MV_Testimonials_Widget();
         }
 
