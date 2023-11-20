@@ -34,7 +34,10 @@
                         <div class="thumb">
                             <?php
                             if (has_post_thumbnail()) {
-                                the_post_thumbnail([200, 200], ['class' => 'img-fluid']);
+                                the_post_thumbnail(
+                                    [200, 200],
+                                    ['class' => 'img-fluid']
+                                );
                             }
                             ?>
                         </div>
